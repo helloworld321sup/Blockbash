@@ -1,7 +1,3 @@
-script_js = r"""// BlockBlast – Vanilla JS
-// Board: 10x10. Place 3 random pieces. Clear full rows/cols. Game over when none fit.
-// State is persisted in localStorage. Includes mouse & touch support + simple hint + undo.
-
 (() => {
   const SIZE = 10;
   const STORAGE_KEY = "blockblast_state_v1";
@@ -415,4 +411,3 @@ script_js = r"""// BlockBlast – Vanilla JS
     // If starting state is empty board & 3 pieces, it's almost always possible; otherwise show game over.
   }
 })();
-"""
