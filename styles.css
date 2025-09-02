@@ -1,0 +1,61 @@
+styles_css = """*{box-sizing:border-box}html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 700px at 20% -10%, #384cff22, transparent), #0f1220;
+  color:#e9ecf1;
+}
+.app{max-width:920px;margin:0 auto;padding:16px 16px 32px;display:flex;flex-direction:column;gap:16px}
+.top{display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap}
+.top h1{font-size:24px;margin:0;letter-spacing:.5px}
+.stats{display:flex;gap:16px;opacity:.9}
+.actions{display:flex;gap:8px}
+button{
+  background:#1b1f36;color:#e9ecf1;border:1px solid #2a2f54;
+  border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer;transition:.15s transform ease, .15s background ease;
+}
+button:hover{transform:translateY(-1px);background:#242a4b}
+button:disabled{opacity:.5;cursor:not-allowed}
+
+.game{display:grid;grid-template-columns:1fr;gap:16px;align-items:start}
+@media (min-width:900px){.game{grid-template-columns:520px 1fr}}
+
+.board{
+  width:min(92vw,520px);
+  aspect-ratio:1/1;
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  grid-template-rows:repeat(10,1fr);
+  gap:4px;
+  padding:4px;
+  background:#0b0f2a;
+  border:1px solid #263055;
+  border-radius:16px;
+  box-shadow:0 10px 30px #0008, inset 0 0 0 1px #0006;
+}
+.cell{
+  border-radius:8px;
+  background:#131935;
+  border:1px solid #1f274a;
+  transition:background .12s ease, transform .06s ease, outline .06s ease;
+}
+.cell[data-filled="1"]{background:linear-gradient(#4c6fff,#2e49ff);border-color:#3e57ff}
+.cell[data-ghost="1"]{outline:2px dashed #6b7cffaa;outline-offset:-2px}
+
+.tray{display:flex;flex-direction:column;gap:8px}
+.pieces{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.piece{
+  display:grid;gap:4px;padding:8px;border-radius:14px;background:#121631;border:1px solid #242a55;
+  box-shadow:0 6px 18px #0006;cursor:grab;touch-action:none;user-select:none;position:relative;
+}
+.piece[data-used="1"]{opacity:.2;filter:saturate(.3);pointer-events:none}
+.piece-cell{
+  width:24px;height:24px;border-radius:6px;background:linear-gradient(#4c6fff,#2e49ff);
+  border:1px solid #3e57ff;box-shadow:inset 0 0 6px #0006;
+}
+@media (min-width:900px){
+  .piece-cell{width:28px;height:28px}
+}
+
+.foot{opacity:.75;font-size:14px}
+"""
